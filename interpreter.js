@@ -9,7 +9,6 @@ variables = [
         value: 0
     }];
 */
-
 function skulpt(python, variables=null, errorCallback=null)
 {
     var skulptOutput = "";
@@ -21,13 +20,13 @@ function skulpt(python, variables=null, errorCallback=null)
 
     function successCallback(mod)
     {
-
+    
     }
 
     if (errorCallback == null) errorCallback = defaultErrorCallback;
     function defaultErrorCallback(err)
     {
-        console.log(err.toString());
+        console.log(err);
     }
 
     function process(code) 
@@ -58,6 +57,7 @@ function skulpt(python, variables=null, errorCallback=null)
 
     // Interpret the code
     process(input);
+    if (skulptOutput == "") return "Syntax error."
 
     // Parse the output to retrieve the value of our variables
     if (variables != null)
@@ -70,6 +70,7 @@ function skulpt(python, variables=null, errorCallback=null)
          // Cut the output 
         skulptOutput = skulptOutput.slice(0, skulptOutput.length - 1 - variables.length * 2);                   
     }
+    
     // Take out the final \n
     if (skulptOutput[skulptOutput.length-1] == "\n") {
         skulptOutput = skulptOutput.slice(0, skulptOutput.length-1);
