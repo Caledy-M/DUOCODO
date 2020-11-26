@@ -68,7 +68,12 @@ function skulpt(python, variables=null, errorCallback=null)
         }
 
          // Cut the output 
-        skulptOutput = skulptOutput.slice(0, skulptOutput.length - variables.length * 2);                   
+        skulptOutput = skulptOutput.slice(0, skulptOutput.length - 1 - variables.length * 2);                   
+    }
+    // Take out the final \n
+    if (skulptOutput[skulptOutput.length-1] == "\n") {
+        skulptOutput = skulptOutput.slice(0, skulptOutput.length-1);
+        console.log("Taking out final line break");
     }
     return skulptOutput;
 }
