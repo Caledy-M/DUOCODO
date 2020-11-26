@@ -1,0 +1,172 @@
+/*#DDA52A: moutarde #7A8670:vert(couleur principale) */
+
+/* <div id="questions-container">
+        <div id="question"></div>
+        <div id="answer"></div>
+        <button id="next">Valider</button>
+    </div>
+    
+Niveau classes/id pour le css des réponses, vous voulez plutôt une ou deux classes ? 
+<div class="answer-multiple"> ou <div class="answer multiple"> ?
+
+<div class="answer-open"> ou <div class="answer open"> ?
+
+<div class="answer-drag"> ou <div class="answer drag"> ?
+
+
+et pour les boutons ? 
+
+<button class="next" type="submit"> et <button class="validate" type="submit"> ? 
+
+*/
+
+@font-face {
+  font-family: "Louis";
+  src: url("typo/Louis George Cafe.ttf");
+  src: url("typo/Louis George Cafe Bold Italic.ttf");
+  src: url("typo/Louis George Cafe Bold.ttf");
+  src: url("typo/Louis George Cafe Italic.ttf");
+  src: url("typo/Louis George Cafe Light Italic.ttf");
+  src: url("typo/Louis George Cafe Light.ttf");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  background-color: #7a8670;
+  font-family: "Louis";
+  color: white;
+}
+
+footer {
+    font-size: small;
+}
+
+h2 {
+  font-size: xx-large;
+  text-align: center;
+}
+
+.d-flex {
+  display: flex;
+  justify-content: flex-start; /*ne fonctionne pas*/
+}
+
+#questions-container {
+  margin: auto;
+}
+
+#go {
+  font-size: xx-large;
+  border-radius: 35px;
+  background-color: #dda52a;
+  color: black;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin: auto;
+  height: 80px;
+  width: 300px;
+  display: block;
+  align-items: center;
+  box-shadow: 6px;
+  
+}
+
+#validez {
+  font-size: xx-large;
+  border-radius: 25px;
+  background-color: #dda52a;
+  color: black;
+  text-decoration: none;
+  margin: auto;
+  height: 50px;
+  width: 150px;
+  display: block;
+  align-items: left; /*ne fonctionne pas*/
+  box-shadow: 60px;
+ 
+}
+
+#next {
+  font-size: xx-large;
+  border-radius: 25px;
+  background-color: #dda52a;
+  color: black;
+  text-decoration: none;
+  margin: auto;
+  height: 50px;
+  width: 150px;
+  display: block;
+  align-items: left; /* */
+  box-shadow: 60px;
+ 
+}
+
+#bouton1 {
+  font-size: xx-large;
+  background-color: white;
+  color: black;
+  border: 6px solid #dda52a; /*ne prend pas la couleur !!!*/
+  text-decoration: none;
+  margin: auto;
+  height: 100px;
+  width: 100%;
+  display: block;
+  align-items: center;
+  box-shadow: 60px;
+  
+}
+
+#bouton1::hoover {
+  font-size: xx-large;
+  background-color: white;
+  color: black;
+  text-decoration: none;
+  margin: auto;
+  height: 100px;
+  width: 300px;
+  display: block;
+  align-items: center;
+  box-shadow: 60px;
+ 
+}
+
+#bouton2 {
+  font-size: xx-large;
+  border-radius: 25px;
+  background-color: white;
+  border: 6px solid #dda52a;
+  color: black;
+  text-decoration: none;
+  margin: auto;
+  display: block;
+  align-items: center;
+  box-shadow: 60px;
+
+}
+
+.question3 {
+  border-bottom: 12px solid #dda52a; /*ne fonctionne pas */
+}
+
+a {
+  text-decoration: none;
+}
+
+#answer {
+  text-align: center;
+ 
+}
+
+.header-questions {
+  width: 40%;
+}
+
+.input {
+  height: 50px;
+  width: 150px;
+  font-size: 42px;
+}
