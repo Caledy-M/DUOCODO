@@ -68,11 +68,9 @@ function skulpt(python, variables=null, errorCallback=null)
         {
             variables[variables.length -i].value = skulptOutput[skulptOutput.length-i*2];
         }
-                            
-    }
 
-    // Cut the output 
-    skulptOutput = skulptOutput.slice(0, skulptOutput.length - variables.length * 2);
-    
+         // Cut the output 
+        skulptOutput = skulptOutput.slice(0, skulptOutput.length - variables.length * 2);                   
+    }
     return skulptOutput;
 }
