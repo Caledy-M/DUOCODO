@@ -61,9 +61,7 @@ function skulpt(python, variables=null, errorCallback=null)
 
     // Parse the output to retrieve the value of our variables
     if (variables != null)
-    {
-        console.log(variables);
-        
+    {        
         for (i=1; i<=variables.length; i++)
         {
             variables[variables.length -i].value = skulptOutput[skulptOutput.length-i*2];
