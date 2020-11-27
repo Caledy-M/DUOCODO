@@ -38,7 +38,8 @@ const questionsReponses = [
 // index pour évitera un méga boucle
 let currentId = 0;
 const btn = document.querySelector(".next");
-const co = document.querySelector("#output");
+const btnNextQuestion = document.querySelector("#nextQuestion");
+
 // set de fonctions qui gèrent le drag and drop
 // pour les options à drag
 function allowDrop(ev) {
@@ -61,6 +62,7 @@ function createCodeQuestions(arr) {
   let question = "";
   question += "<div class='question'>" + arr[currentId]["question"] + "</div>";
   answer = `<div class='${arr[currentId].type}'>`;
+
   if (arr[currentId]["type"] === "reponse-choixMultiple") {
     for (let j = 0; j < arr[currentId]["reponses"].length; j++) {
       answer += `<input type="radio" id='${arr[currentId].id}' name='${arr[currentId].id}' data-index='${arr[currentId].id}' value='${arr[currentId]["reponses"][j]}'><label for='option'>${arr[currentId]["reponses"][j]}</label>`;
@@ -81,7 +83,7 @@ function createCodeQuestions(arr) {
 
   }
 
-  answer += `</div>`;
+  answer += `<div id="output"></div></div>`;
   question += answer;
   questions_container.innerHTML = question;
 }
@@ -109,7 +111,8 @@ function checkAnswer(level, playerInput=null) // out_consoleOutput won’t work,
             variablesValues = JSON.parse(JSON.stringify(level.variables));
 
         consoleOutput = skulpt(skulptInput, variablesValues);
-                co.innerHTML = consoleOutput;
+        const co = document.querySelector("#output");
+        co.innerHTML = consoleOutput;
 
         // Check if the result is what we expect
         if (level.reponse != null)
@@ -145,16 +148,23 @@ function checkAnswer(level, playerInput=null) // out_consoleOutput won’t work,
     }   
 }
 
+const questions_container = document.querySelector(".questions_container");
 // on gère apd ici ce qu'il se passe au clic du bouton
 btn.addEventListener("click", function () {
   console.log(questionsReponses);
-  if(checkAnswer(questionsReponses[currentId]))
-  // séparer le goToNext: le mettre dans le listener d'un autre btn
-  // qui apparait quand le 1er est cliqué
+  if(checkAnswer(questionsReponses[currentId])){
+    btnNextQuestion.style.visibility = "visible";
+    btn.style.visibility = "hidden";
+  }
+  
+  btnNextQuestion.addEventListener("click", function(){
     goToNext(questionsReponses);
+    btn.style.visibility = "visible";
+    btnNextQuestion.style.visibility = "hidden";
+  });
 });
 
-const questions_container = document.querySelector(".questions_container");
+
 createCodeQuestions(questionsReponses);
 
 // fonction de passage à la question suivante
