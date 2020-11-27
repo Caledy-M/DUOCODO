@@ -110,3 +110,7 @@ a {
   align-items: center;
   box-shadow: 60px;
 }
+
+.span {
+  display: flex;
+}
