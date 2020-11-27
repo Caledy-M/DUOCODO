@@ -1,17 +1,4 @@
-[11:10] Melody Deckers
-    
-  
-  
-  
-    
-      
-      
-        CSS
-      
-    
-    
-    
-      @font-face {​
+@font-face {
   font-family: "Louis";
   src: url("typo/Louis George Cafe.ttf");
   src: url("typo/Louis George Cafe Bold Italic.ttf");
@@ -19,24 +6,24 @@
   src: url("typo/Louis George Cafe Italic.ttf");
   src: url("typo/Louis George Cafe Light Italic.ttf");
   src: url("typo/Louis George Cafe Light.ttf");
-}​
-* {​
+}
+* {
   box-sizing: border-box;
-}​
+}
 body,
-html {​
+html {
   background-color: #7a8670;
   font-family: "Louis";
   color: white;
-}​
-footer {​
+}
+footer {
   font-size: small;
-}​
-.header-questions {​
+}
+.header-questions {
   width: 40%;
-}​
+}
 /*Boutton acceuil*/
-#go {​
+#go {
   font-size: xx-large;
   border-radius: 35px;
   background-color: #dda52a;
@@ -49,18 +36,18 @@ footer {​
   display: block;
   align-items: center;
   box-shadow: 6px;
-}​
+}
 /*div qui contient la question*/
-#questions-container {​
+#questions-container {
   margin: auto;
-}​
-.question {​
+}
+.question {
   font-size: xx-large;
   text-align: center;
-}​
+}
 /*Bouttons next et validez*/
 .next,
-.validez {​
+.validez {
   font-size: xx-large;
   border-radius: 25px;
   background-color: #dda52a;
@@ -72,13 +59,13 @@ footer {​
   display: block;
   align-items: left; /*ne fonctionne pas*/
   box-shadow: 60px;
-}​
-a {​
+}
+a {
   text-decoration: none;
   color: black;
-}​
+}
 /*Choix mult*/
-.choix-multiple /*Boutons radio*/ {​
+.choix-multiple /*Boutons radio*/ {
   font-size: xx-large;
   background-color: white;
   color: black;
@@ -90,16 +77,16 @@ a {​
   display: block;
   align-items: center;
   box-shadow: 60px;
-}​
-.input {​
+}
+.input {
   height: 50px;
   width: 150px;
   font-size: 42px;
-}​
-.reponse-drag {​
+}
+.reponse-drag {
   display: flex;
-}​
-.option {​
+}
+.option {
   font-size: xx-large;
   border-radius: 25px;
   background-color: white;
@@ -110,9 +97,4 @@ a {​
   display: block;
   align-items: center;
   box-shadow: 60px;
-}​
-    
-    
-  
-  
-
+}
