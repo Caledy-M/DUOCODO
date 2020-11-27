@@ -159,7 +159,8 @@ function goToNext(arr) {
   console.log(arr);
   currentId++;
   if (currentId >= arr.length) {
-    questions_container.innerHTML = "Merci d'avoir participé à notre quiz !";
+    questions_container.innerHTML = "<p style='text-align: center; font-size: xx-large;'>Merci d'avoir participé à notre quizz !</p>";
+    questions_container.innerHTML += "<img style='height: 400px; width: 400px;' src='Pablit.svg'/>";
     btn.style.display = "none";
   } else {
     createCodeQuestions(arr);
