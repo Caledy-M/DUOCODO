@@ -55,9 +55,14 @@ function skulpt(python, variables=null, errorCallback=null)
         }
     }
 
+    // Change HTML formatting
+    input = input.replace(/<br>/g, "\n");
+    input = input.replace(/&emsp;/g, "\t");
+
     // Interpret the code
     process(input);
     if (skulptOutput == "") return "Syntax error."
+
 
     // Parse the output to retrieve the value of our variables
     if (variables != null)
