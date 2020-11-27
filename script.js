@@ -62,24 +62,29 @@ function createCodeQuestions(arr) {
   let question = "";
   question += "<div class='question'>" + arr[currentId]["question"] + "</div>";
   answer = `<div class='${arr[currentId].type}'>`;
-
+  
   if (arr[currentId]["type"] === "reponse-choixMultiple") {
     for (let j = 0; j < arr[currentId]["reponses"].length; j++) {
-      answer += `<input type="radio" id='${arr[currentId].id}' name='${arr[currentId].id}' data-index='${arr[currentId].id}' value='${arr[currentId]["reponses"][j]}'><label for='option'>${arr[currentId]["reponses"][j]}</label>`;
+      answer += `<input type="radio" class="choix" id='${arr[currentId].id}' name='${arr[currentId].id}' data-index='${arr[currentId].id}' value='${arr[currentId]["reponses"][j]}'><label for='option'>${arr[currentId]["reponses"][j]}</label>`;
     }
   } else if (arr[currentId]["type"] === "reponse-open") {
     answer += `${arr[currentId].remaining[0]}<input id='input' type='text' data-index='${arr[currentId].id}'>${arr[currentId].remaining[1]}`;
   } else if (arr[currentId]["type"] === "reponse-drag") {
-
+    
     for (let k = 0; k < arr[currentId]["choices"].length; k++) {
       // créa d'un container pour flex les options ??
       // zone des éléments à drag
       answer += `<li id="dragdrop${k}" class="option" draggable="true" ondragstart="drag(event)">${arr[currentId]["choices"][k]}</li>`;
     }
+
+    answer += `<div class="span">`;
+
     for (let l = 0; l < arr[currentId]["tofill"].length; l++) {
       // zone des espaces où drop
       answer += `<br><span id="blank" ondrop="drop(event)" ondragover="allowDrop(event)">${arr[currentId]["tofill"][l]}</span>`;
     }
+
+    answer += `</div>`;
 
   }
 
