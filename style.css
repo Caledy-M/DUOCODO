@@ -40,8 +40,11 @@ footer {
 /*div qui contient la question*/
 #questions-container {
   margin: auto;
+  padding: auto;
 }
 .question {
+  margin: auto;
+  padding: auto;
   font-size: xx-large;
   text-align: center;
 }
@@ -59,6 +62,8 @@ footer {
   display: block;
   align-items: left; /*ne fonctionne pas*/
   box-shadow: 60px;
+  margin-top: 100px;
+  padding: auto;
 }
 #nextQuestion {
   visibility: hidden;
@@ -75,6 +80,8 @@ a {
   font-size: 42px;
 }
 .reponse-drag {
+  margin-top: 100px;
+  padding: auto;
   display: flex;
 }
 .option {
@@ -92,9 +99,9 @@ a {
 
 #output {
   border: 1.5px solid #dda52a;
-
   text-align: center;
-  margin: 0;
+  margin-top: 100px;
+  padding: auto;
 }
 /*style des boutons radios*/
 /*.choix {
@@ -113,4 +120,19 @@ a {
 
 .span {
   display: flex;
+}
+.reponse-open {
+  margin-top: 100px;
+  padding: auto;
+}
+.reponse-choixMultiple {
+  margin-top: 100px;
+  padding: auto;
+  text-align: center;
+  font-size: larger;
+}
+.choix {
+  width: 100%;
+  padding: auto;
+  margin: auto;
 }
