@@ -1,10 +1,9 @@
 // TODO: Ditch playerInput and out_consoleOutput arguments
 
-function checkAnswer(level, playerInput, out_consoleOutput=null) // out_consoleOutput won’t work, gonna have to fill the HTML directly here
+function checkAnswer(level, playerInput=null) // out_consoleOutput won’t work, gonna have to fill the HTML directly here
 {
-    //const playerInput = document.querySelector("#input").value;
-    console.log("Entering checkAnswer");
-    console.log(level);
+    if (playerInput == null) playerInput = document.querySelector("#input").value;
+
     if (level.type == "open")
     {
         // Assemble the code to send to the interpreter
@@ -22,6 +21,7 @@ function checkAnswer(level, playerInput, out_consoleOutput=null) // out_consoleO
             variablesValues = JSON.parse(JSON.stringify(level.variables));
 
         consoleOutput = skulpt(skulptInput, variablesValues);
+        document.getElementById("output").innerHTML = consoleOutput;
 
         // Check if the result is what we expect
         if (level.reponse != null)
