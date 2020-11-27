@@ -61,11 +61,12 @@ function createCodeQuestions(arr) {
 
 function checkAnswer(level, playerInput=null) // out_consoleOutput won’t work, gonna have to fill the HTML directly here
 {
+    const co = document.querySelector("#output");
     console.log(level);
-    if (playerInput == null) playerInput = document.querySelector("#input").value;
-
+    
     if (level.type == "reponse-open")
     {
+      if (playerInput == null) playerInput = document.querySelector("#input").value;
         // Assemble the code to send to the interpreter
         var skulptInput = ""
         for (i=0; i<level.remaining.length; i++)
@@ -81,7 +82,6 @@ function checkAnswer(level, playerInput=null) // out_consoleOutput won’t work,
             variablesValues = JSON.parse(JSON.stringify(level.variables));
 
         consoleOutput = skulpt(skulptInput, variablesValues);
-        const co = document.querySelector("#output");
         co.innerHTML = consoleOutput;
 
         // Check if the result is what we expect
@@ -114,10 +114,20 @@ function checkAnswer(level, playerInput=null) // out_consoleOutput won’t work,
     }
     else if (level.type="reponse-choixMultiple")
     {
-      if (playerInput=null)
+      if (playerInput==null)
         playerInput=document.querySelector('input[type="radio"]:checked').value;
-
-      return (playerInput == level.bonreponse);
+        console.log(playerInput);
+        console.log(level.bonreponse);
+      if (playerInput != level.bonreponse)
+      { 
+        co.innerHTML = "Mauvaise réponse :( Réessayez.";
+        return false;
+      } else {
+        co.innerHTML = "Bravo :)";
+        return true;}
+      
+      
+    
     }   
     else
     {
@@ -134,12 +144,12 @@ btn.addEventListener("click", function () {
     btn.style.visibility = "hidden";
   }
   
-  btnNextQuestion.addEventListener("click", function(){
-    goToNext(questionsReponses);
-    btn.style.visibility = "visible";
-    btnNextQuestion.style.visibility = "hidden";
-  });
 });
+    btnNextQuestion.addEventListener("click", function(){
+      goToNext(questionsReponses);
+      btn.style.visibility = "visible";
+      btnNextQuestion.style.visibility = "hidden";
+    });
 
 
 createCodeQuestions(questionsReponses);

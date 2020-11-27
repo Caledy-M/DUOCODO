@@ -12,7 +12,7 @@ const questionsReponses = [
       id: 1,
       question: "la quelle de ces propostions est une string?",
       reponses: ["&lt;hello&gt;", "/hey/", "[hallo]", "&apos;yo&apos;"],
-      bonreponse: "&apos;yo&apos;",
+      bonreponse: "'yo'",
       type: "reponse-choixMultiple",
     },
     {
