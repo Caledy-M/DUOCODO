@@ -142,10 +142,17 @@ function checkAnswer(level, playerInput=null) // out_consoleOutput won’t work,
         }
         return true;
     }
+    else if (level.type="reponse-choixMultiple")
+    {
+      if (playerInput=null)
+        playerInput=document.querySelector('input[type="radio"]:checked').value;
+
+      return (playerInput == level.bonreponse);
+    }   
     else
     {
-        console.error("checkAnswer() not yet implemented for types other than ’open’");
-    }   
+      console.error("Invalid question type");
+    } 
 }
 
 const questions_container = document.querySelector(".questions_container");
