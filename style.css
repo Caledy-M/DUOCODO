@@ -17,7 +17,7 @@ html {
   color: white;
 }
 footer {
-  font-size: small;
+  font-size: 10px;
 }
 .header-questions {
   width: 40%;
@@ -69,22 +69,9 @@ a {
   color: black;
 }
 /*Choix mult*/
-.choix-multiple /*Boutons radio*/ {
-  font-size: xx-large;
-  background-color: white;
-  color: black;
-  border: 6px solid #dda52a;
-  text-decoration: none;
-  margin: auto;
-  height: 100px;
-  width: 100%;
-  display: block;
-  align-items: center;
-  box-shadow: 60px;
-}
 .input {
-  height: 50px;
-  width: 150px;
+  height: 100px;
+  width: 300px;
   font-size: 42px;
 }
 .reponse-drag {
@@ -98,6 +85,27 @@ a {
   color: black;
   text-decoration: none;
   margin: auto;
+  display: block;
+  align-items: center;
+  box-shadow: 60px;
+}
+
+#output {
+  border: 1.5px solid #dda52a;
+
+  text-align: center;
+  margin: 0;
+}
+/*style des boutons radios*/
+.choix {
+  font-size: xx-large;
+  background-color: white;
+  color: black;
+  border: 6px solid #dda52a;
+  text-decoration: none;
+  margin: auto;
+  height: 100px;
+  width: 100%;
   display: block;
   align-items: center;
   box-shadow: 60px;
